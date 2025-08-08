@@ -1,43 +1,63 @@
 import 'package:flutter/material.dart';
 
 class ZenTheme {
-  ZenTheme._();
-
-  static final ColorScheme _lightColorScheme = ColorScheme.fromSeed(
-    seedColor: const Color(0xFF2E7D32),
-    brightness: Brightness.light,
-  );
-
-  static final ColorScheme _darkColorScheme = ColorScheme.fromSeed(
-    seedColor: const Color(0xFF66BB6A),
-    brightness: Brightness.dark,
-  );
-
-  static ThemeData get lightTheme => ThemeData(
-        colorScheme: _lightColorScheme,
-        useMaterial3: true,
-        scaffoldBackgroundColor: _lightColorScheme.background,
-        appBarTheme: AppBarTheme(
-          backgroundColor: _lightColorScheme.primary,
-          foregroundColor: _lightColorScheme.onPrimary,
-          elevation: 0,
+  static ThemeData get lightTheme {
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: const Color(0xFF4CAF50), // Green for nature/bonsai theme
+        brightness: Brightness.light,
+      ),
+      appBarTheme: const AppBarTheme(
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.black87,
+      ),
+      cardTheme: const CardThemeData(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontSize: 14),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         ),
-      );
+      ),
+    );
+  }
 
-  static ThemeData get darkTheme => ThemeData(
-        colorScheme: _darkColorScheme,
-        useMaterial3: true,
-        scaffoldBackgroundColor: _darkColorScheme.background,
-        appBarTheme: AppBarTheme(
-          backgroundColor: _darkColorScheme.surface,
-          foregroundColor: _darkColorScheme.onSurface,
-          elevation: 0,
+  static ThemeData get darkTheme {
+    return ThemeData(
+      useMaterial3: true,
+      colorScheme: ColorScheme.fromSeed(
+        seedColor: const Color(0xFF4CAF50),
+        brightness: Brightness.dark,
+      ),
+      appBarTheme: const AppBarTheme(
+        centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.white,
+      ),
+      cardTheme: const CardThemeData(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(fontSize: 14),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
         ),
-      );
+      ),
+    );
+  }
 }

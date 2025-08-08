@@ -16,7 +16,6 @@ class BinaryBonsaiApp extends StatelessWidget {
       title: 'Binary Bonsai',
       theme: ZenTheme.lightTheme,
       darkTheme: ZenTheme.darkTheme,
-      themeMode: ThemeMode.system,
       home: const GardenPage(),
       debugShowCheckedModeBanner: false,
     );
